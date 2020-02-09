@@ -31,33 +31,5 @@ export default {
 };
 </script>
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-.content {
-  width: 100%;
-  height: 680px;
-}
-.tapbar {
-  width: 100%;
-  left: 0;
-  position: fixed;
-  bottom: 0px;
-}
 </style>
