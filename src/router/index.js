@@ -1,23 +1,55 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Search from '../components/Home/Search/Search.vue'
+import Content from '../components/Home/Content/Content.vue'
+import tapBar from '../views/tapBar.vue'
 
+import myinfo from '../components/MyInfo/myinfo.vue'
+import Accident from '../components/Accident/Accident.vue'
+import classify from '../components/classify/Classify.vue'
+import Cart from '../components/ShopCart/Cart.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    components: {content:Home,tapBar},
+    children: [
+      {
+        path: "/search",
+        name: "search",
+        components:{Search}
+      },
+      {
+        path: "/Content",
+        name: 'Content',
+        components:{Content}
+      }
+    ]
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/classify',
+    name: "classify",
+    components:{content:classify,tapBar}
+  },
+  {
+    path: '/Accident',
+    name: "Accident",
+    components:{content:Accident,tapBar}
+  },
+  {
+    path: '/Cart',
+    name: "Cart",
+    components:{content:Cart,tapBar}
+  },
+  {
+    path: '/myinfo',
+    name: "myinfo",
+    components:{content:myinfo,tapBar}
+  },
+ 
 ]
 
 const router = new VueRouter({
